@@ -1,4 +1,3 @@
-// CONTRIB: made by malediktus, not checked
 namespace BossMod.Global.Quest.FF16Collab.InfernalShadow;
 
 class VulcanBurst : Components.RaidwideCast
@@ -58,20 +57,32 @@ class TailStrike : Components.SelfTargetedAOEs
 class FireRampageCleave : Components.GenericAOEs
 {
     private static readonly AOEShapeCone cone = new(40, 90.Degrees());
-    private readonly List<AOEInstance> _aoes = [];
+   private readonly List<(WPos position, Angle rotation, DateTime activation, uint AID)> _castersunsorted = [];
+    private List<(WPos position, Angle rotation, DateTime activation)> _casters = [];
 
-    public override IEnumerable<AOEInstance> ActiveAOEs(BossModule module, int slot, Actor actor) => _aoes.Take(1);
+    public override IEnumerable<AOEInstance> ActiveAOEs(BossModule module, int slot, Actor actor)
+    {
+        if (_casters.Count > 0)
+            yield return new(cone, _casters[0].position, _casters[0].rotation, _casters[0].activation);
+    }
 
     public override void OnCastStarted(BossModule module, Actor caster, ActorCastInfo spell)
     {
         if ((AID)spell.Action.ID is AID.FieryRampageCleaveReal or AID.FieryRampageCleaveReal2)
-            _aoes.Add(new(cone, caster.Position, spell.Rotation, spell.NPCFinishAt));
+        {
+            _castersunsorted.Add((caster.Position, spell.Rotation, spell.NPCFinishAt, spell.Action.ID)); //casters appear in random order in raw ops
+            _casters = _castersunsorted.OrderBy(x => x.AID).Select(x => (x.position, x.rotation, x.activation)).ToList();
+        }
     }
+
 
     public override void OnCastFinished(BossModule module, Actor caster, ActorCastInfo spell)
     {
-        if (_aoes.Count > 0 && (AID)spell.Action.ID is AID.FieryRampageCleaveReal or AID.FieryRampageCleaveReal2)
-            _aoes.RemoveAt(0);
+        if (_casters.Count > 0 && (AID)spell.Action.ID is AID.FieryRampageCleaveReal or AID.FieryRampageCleaveReal2)
+        {
+            _casters.RemoveAt(0);
+            _castersunsorted.Clear();
+        }
     }
 }
 
@@ -243,7 +254,7 @@ class SearingStomp : BossComponent
     }
 }
 
-[ModuleInfo(GroupType = BossModuleInfo.GroupType.Quest, GroupID = 70334, NameID = 12564)] // also: CFC 959
+[ModuleInfo(BossModuleInfo.Maturity.Contributed, Contributors = "Malediktus", GroupType = BossModuleInfo.GroupType.Quest, GroupID = 70334, NameID = 12564)] // also: CFC 959
 public class InfernalShadow : BossModule
 {
     public InfernalShadow(WorldState ws, Actor primary) : base(ws, primary, new ArenaBoundsCircle(new(0, 0), 20)) { }
