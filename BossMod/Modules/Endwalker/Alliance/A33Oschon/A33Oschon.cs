@@ -1,5 +1,20 @@
 ﻿namespace BossMod.Endwalker.Alliance.A33Oschon;
 
+class DownhillP1 : Components.LocationTargetedAOEs
+{
+    public DownhillP1() : base(ActionID.MakeSpell(AID.Downhill), 6) { }
+}
+
+class SoaringMinuet1 : Components.SelfTargetedAOEs
+{
+    public SoaringMinuet1() : base(ActionID.MakeSpell(AID.SoaringMinuet1), new AOEShapeCone(65, 135.Degrees())) { }
+}
+
+class SoaringMinuet2 : Components.SelfTargetedAOEs
+{
+    public SoaringMinuet2() : base(ActionID.MakeSpell(AID.SoaringMinuet2), new AOEShapeCone(65, 135.Degrees())) { }
+}
+
 class SuddenDownpour : Components.RaidwideCast
 {
     public SuddenDownpour() : base(ActionID.MakeSpell(AID.SuddenDownpour2)) { }
@@ -23,11 +38,23 @@ class TrekShot2 : Components.SelfTargetedAOEs
 class TheArrow : Components.BaitAwayCast
 {
     public TheArrow() : base(ActionID.MakeSpell(AID.TheArrow), new AOEShapeCircle(6), true) { }
+
+    public override void AddGlobalHints(BossModule module, GlobalHints hints)
+    {
+        if (CurrentBaits.Count > 0)
+            hints.Add("Tankbuster cleave");
+    }
 }
 
 class TheArrowP2 : Components.BaitAwayCast
 {
     public TheArrowP2() : base(ActionID.MakeSpell(AID.TheArrowP2), new AOEShapeCircle(10), true) { }
+
+    public override void AddGlobalHints(BossModule module, GlobalHints hints)
+    {
+        if (CurrentBaits.Count > 0)
+            hints.Add("Tankbuster cleave");
+    }
 }
 
 class PitonPull : Components.LocationTargetedAOEs
@@ -50,7 +77,7 @@ class DownhillBig : Components.LocationTargetedAOEs
     public DownhillBig() : base(ActionID.MakeSpell(AID.DownhillBig), 8) { }
 }
 
-[ModuleInfo(PrimaryActorOID = (uint)OID.OschonP1, GroupType = BossModuleInfo.GroupType.CFC, GroupID = 962, NameID = 11300)]
+[ModuleInfo(BossModuleInfo.Maturity.Contributed, Contributors = "Malediktus, LTS", PrimaryActorOID = (uint)OID.OschonP1, GroupType = BossModuleInfo.GroupType.CFC, GroupID = 962, NameID = 11300)]
 public class A33Oschon : BossModule
 {
     private Actor? _oschonP1;
