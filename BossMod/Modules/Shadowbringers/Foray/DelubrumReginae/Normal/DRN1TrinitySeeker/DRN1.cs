@@ -16,7 +16,7 @@ class DeadIron : Components.BaitAwayTethers
     public DeadIron(BossModule module) : base(module, new AOEShapeCone(50, 15.Degrees()), (uint)TetherID.DeadIron, ActionID.MakeSpell(AID.DeadIronAOE)) { DrawTethers = false; }
 }
 
-[ModuleInfo(BossModuleInfo.Maturity.Contributed, GroupType = BossModuleInfo.GroupType.CFC, GroupID = 760, NameID = 9834)]
+[ModuleInfo(BossModuleInfo.Maturity.WIP, GroupType = BossModuleInfo.GroupType.CFC, GroupID = 760, NameID = 9834)]
 public class DRN1(WorldState ws, Actor primary) : BossModule(ws, primary, new ArenaBoundsCircle(new(0, 278), 25))
 {
     public static readonly float BarricadeRadius = 20;
