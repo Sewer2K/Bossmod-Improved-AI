@@ -181,7 +181,7 @@ public class KnockbackFromCastTarget(BossModule module, ActionID aid, float dist
     public Kind KnockbackKind = kind;
     public float MinDistance = minDistance;
     public bool MinDistanceBetweenHitboxes = minDistanceBetweenHitboxes;
-    public readonly List<Actor> Casters = new();
+    public readonly List<Actor> Casters = [];
 
     public override IEnumerable<Source> Sources(int slot, Actor actor)
     {

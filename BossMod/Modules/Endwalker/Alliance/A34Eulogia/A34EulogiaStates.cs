@@ -1,4 +1,4 @@
-﻿namespace BossMod.Endwalker.Alliance.A34Eulogia;
+namespace BossMod.Endwalker.Alliance.A34Eulogia;
 
 class ArenaChanges(BossModule module) : BossComponent(module)
 {
@@ -7,11 +7,11 @@ class ArenaChanges(BossModule module) : BossComponent(module)
         if (index == 0x1B)
         {
             if (state == 0x00080004)
-                Module.Arena.Bounds = new ArenaBoundsCircle(Module.Bounds.Center, 35);
+                Arena.Bounds = new ArenaBoundsCircle(Arena.Bounds.Center, 35);
             if (state is 0x00020001 or 0x00100001)
-                Module.Arena.Bounds = new ArenaBoundsCircle(Module.Bounds.Center, 30);
+                Arena.Bounds = new ArenaBoundsCircle(Arena.Bounds.Center, 30);
             if (state == 0x00400020)
-                Module.Arena.Bounds = new ArenaBoundsSquare(Module.Bounds.Center, 24);
+                Arena.Bounds = new ArenaBoundsSquare(Arena.Bounds.Center, 24);
         }
     }
 }

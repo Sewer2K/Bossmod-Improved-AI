@@ -33,7 +33,7 @@ class A33OschonStates : StateMachineBuilder
             .ActivateOnEnter<SwingingDraw>()
             .ActivateOnEnter<LoftyPeaks>()
             .Raw.Update = () => !Module.PrimaryActor.IsTargetable;
-        SimplePhase(1, id => { SimpleState(id, 20000, "Enrage"); }, "P2")
+        SimplePhase(1, id => { SimpleState(id, 10000, "Enrage"); }, "P2")
             .ActivateOnEnter<Phase2ArenaUpdate>()
             .ActivateOnEnter<PitonPull>()
             .ActivateOnEnter<Altitude>()

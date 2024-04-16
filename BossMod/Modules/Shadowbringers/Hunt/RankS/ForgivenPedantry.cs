@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Hunt.RankS.ForgivenPedantry;
+namespace BossMod.Shadowbringers.Hunt.RankS.ForgivenPedantry;
 
 public enum OID : uint
 {
@@ -86,7 +86,7 @@ class FeveredFlagellationHint(BossModule module) : Components.SingleTargetCast(m
 
 class WitchHunt(BossModule module) : Components.GenericBaitAway(module)
 {
-    private static readonly AOEShapeRect rect = new(0, 5);
+    private readonly AOEShapeRect rect = new(0, 5); //note: this can't be static or length won't be recalculated properly
     private bool witchHunt1done;
 
     public override void Update()

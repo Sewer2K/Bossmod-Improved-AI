@@ -1,4 +1,4 @@
-﻿namespace BossMod;
+namespace BossMod;
 
 // note: if arena bounds are changed, new instance is recreated
 // max approx error can change without recreating the instance
@@ -107,29 +107,19 @@ public abstract class ArenaBounds(WPos center, float halfSize)
         return ClipAndTriangulate([start + side, start - side, end - side, end + side]);
     }
 
-    public static (float, float, WPos) CalculateHalfSizeAndCenter(List<WPos> points)
+    public static (float, float, WPos) CalculateHalfSizeAndCenter(IEnumerable<WPos> points)
     {
         float minX = float.MaxValue;
         float maxX = float.MinValue;
         float minZ = float.MaxValue;
         float maxZ = float.MinValue;
 
-        for (int i = 0; i < points.Count; i += 2)
+        foreach (var point in points)
         {
-            WPos p = points[i];
-            if (p.X < minX) minX = p.X;
-            if (p.X > maxX) maxX = p.X;
-            if (p.Z < minZ) minZ = p.Z;
-            if (p.Z > maxZ) maxZ = p.Z;
-
-            if (i + 1 < points.Count)
-            {
-                p = points[i + 1];
-                if (p.X < minX) minX = p.X;
-                if (p.X > maxX) maxX = p.X;
-                if (p.Z < minZ) minZ = p.Z;
-                if (p.Z > maxZ) maxZ = p.Z;
-            }
+            if (point.X < minX) minX = point.X;
+            if (point.X > maxX) maxX = point.X;
+            if (point.Z < minZ) minZ = point.Z;
+            if (point.Z > maxZ) maxZ = point.Z;
         }
 
         float halfWidth = (maxX - minX) / 2;
@@ -228,9 +218,9 @@ public class ArenaBoundsPolygon : ArenaBounds
 {
     public float HalfWidth { get; private set; }
     public float HalfHeight { get; private set; }
-    public readonly List<WPos> Points;
+    public readonly IEnumerable<WPos> Points;
 
-    public ArenaBoundsPolygon(List<WPos> points) : base(CalculateHalfSizeAndCenter(points).Item3, MathF.Max(CalculateHalfSizeAndCenter(points).Item1, CalculateHalfSizeAndCenter(points).Item2))
+    public ArenaBoundsPolygon(IEnumerable<WPos> points) : base(CalculateHalfSizeAndCenter(points).Item3, MathF.Max(CalculateHalfSizeAndCenter(points).Item1, CalculateHalfSizeAndCenter(points).Item2))
     {
         Points = points;
         (HalfWidth, HalfHeight, Center) = CalculateHalfSizeAndCenter(points);
@@ -250,14 +240,16 @@ public class ArenaBoundsPolygon : ArenaBounds
     public override float IntersectRay(WPos origin, WDir dir)
     {
         float minDistance = float.MaxValue;
-        for (int i = 0; i < Points.Count; i++)
+        int i = 0;
+        foreach (var point in Points)
         {
-            int j = (i + 1) % Points.Count;
-            WPos p0 = Points[i];
-            WPos p1 = Points[j];
+            int j = (i + 1) % Points.Count();
+            WPos p0 = point;
+            WPos p1 = Points.ElementAt(j);
             float distance = Intersect.RaySegment(origin, dir, p0, p1);
             if (distance < minDistance)
                 minDistance = distance;
+            ++i;
         }
         return minDistance;
     }
@@ -267,11 +259,12 @@ public class ArenaBoundsPolygon : ArenaBounds
         float minDistance = float.MaxValue;
         WPos closestPoint = default;
 
-        for (int i = 0; i < Points.Count; i++)
+        int i = 0;
+        foreach (var point in Points)
         {
-            int j = (i + 1) % Points.Count;
-            WPos p0 = Points[i];
-            WPos p1 = Points[j];
+            int j = (i + 1) % Points.Count();
+            WPos p0 = point;
+            WPos p1 = Points.ElementAt(j);
             WPos pointOnSegment = Intersect.ClosestPointOnSegment(p0, p1, Center + offset);
             float distance = (pointOnSegment - (Center + offset)).Length();
 
@@ -280,6 +273,7 @@ public class ArenaBoundsPolygon : ArenaBounds
                 minDistance = distance;
                 closestPoint = pointOnSegment;
             }
+            ++i;
         }
 
         return closestPoint - Center;

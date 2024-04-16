@@ -1,4 +1,4 @@
-﻿namespace BossMod.Endwalker.Alliance.A13Azeyma;
+namespace BossMod.Endwalker.Alliance.A13Azeyma;
 
 class SolarFans(BossModule module) : Components.ChargeAOEs(module, ActionID.MakeSpell(AID.SolarFansAOE), 5);
 
