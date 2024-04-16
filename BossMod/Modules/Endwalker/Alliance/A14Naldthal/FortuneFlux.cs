@@ -4,7 +4,7 @@ class FortuneFluxOrder(BossModule module) : BossComponent(module)
 {
     public enum Mechanic { None, AOE, Knockback }
 
-    public List<(WPos source, Mechanic mechanic, DateTime activation)> Mechanics = new();
+    public List<(WPos source, Mechanic mechanic, DateTime activation)> Mechanics = [];
     public int NumComplete;
     private WPos _currentTethered;
     private Mechanic _currentMechanic;

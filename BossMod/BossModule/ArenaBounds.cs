@@ -1,4 +1,4 @@
-﻿namespace BossMod;
+namespace BossMod;
 
 // note: if arena bounds are changed, new instance is recreated
 // max approx error can change without recreating the instance

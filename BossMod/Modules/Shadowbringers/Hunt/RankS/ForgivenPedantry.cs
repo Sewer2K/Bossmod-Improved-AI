@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Hunt.RankS.ForgivenPedantry;
+namespace BossMod.Shadowbringers.Hunt.RankS.ForgivenPedantry;
 
 public enum OID : uint
 {

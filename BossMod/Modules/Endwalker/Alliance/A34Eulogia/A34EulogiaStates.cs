@@ -1,4 +1,4 @@
-﻿namespace BossMod.Endwalker.Alliance.A34Eulogia;
+namespace BossMod.Endwalker.Alliance.A34Eulogia;
 
 class ArenaChanges(BossModule module) : BossComponent(module)
 {
