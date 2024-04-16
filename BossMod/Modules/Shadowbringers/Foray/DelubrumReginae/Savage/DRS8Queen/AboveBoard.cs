@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS8Queen;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS8Queen;
 
 // note: this is exactly the same as queen's guard component
 class AboveBoard(BossModule module) : Components.GenericAOEs(module)

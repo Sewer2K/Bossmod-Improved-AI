@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS6TrinityAvowed;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS6TrinityAvowed;
 
 class WrathOfBozja(BossModule module) : Components.CastSharedTankbuster(module, ActionID.MakeSpell(AID.WrathOfBozja), new AOEShapeCone(60, 45.Degrees())); // TODO: verify angle
 class WrathOfBozjaBow(BossModule module) : Components.CastSharedTankbuster(module, ActionID.MakeSpell(AID.WrathOfBozjaBow), new AOEShapeCone(60, 45.Degrees())); // TODO: verify angle

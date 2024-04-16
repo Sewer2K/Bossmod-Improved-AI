@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS3Dahu;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS3Dahu;
 
 class SpitFlame(BossModule module) : Components.UniformStackSpread(module, 0, 4, alwaysShowSpreads: true, raidwideOnResolve: false)
 {

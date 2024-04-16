@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS4QueensGuard;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS4QueensGuard;
 
 class OptimalOffensiveSword(BossModule module) : Components.ChargeAOEs(module, ActionID.MakeSpell(AID.OptimalOffensiveSword), 2.5f);
 class OptimalOffensiveShield(BossModule module) : Components.ChargeAOEs(module, ActionID.MakeSpell(AID.OptimalOffensiveShield), 2.5f);

@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS3Dahu;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS3Dahu;
 
 // these two abilities are very similar, only differ by activation delay and action id
 // TODO: not all the wall is safe...

@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS5Phantom;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS5Phantom;
 
 // TODO: improve hints, currently they are not good... we probably don't need a fully generic implementation, since there are few possible patterns
 class Miasma(BossModule module) : Components.GenericAOEs(module)

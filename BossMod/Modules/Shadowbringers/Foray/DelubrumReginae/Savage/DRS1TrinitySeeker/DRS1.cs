@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS1TrinitySeeker;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS1TrinitySeeker;
 
 class VerdantTempest(BossModule module) : Components.CastCounter(module, ActionID.MakeSpell(AID.VerdantTempestAOE));
 class MercifulBreeze(BossModule module) : Components.SelfTargetedAOEs(module, ActionID.MakeSpell(AID.MercifulBreeze), new AOEShapeRect(50, 2.5f));

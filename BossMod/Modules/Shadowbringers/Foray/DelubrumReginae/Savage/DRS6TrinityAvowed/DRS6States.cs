@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS6TrinityAvowed;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS6TrinityAvowed;
 
 class DRS6States : StateMachineBuilder
 {

@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS1TrinitySeeker;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS1TrinitySeeker;
 
 // TODO: consider showing something before clones jump?
 class BalefulFirestorm(BossModule module) : Components.GenericAOEs(module)

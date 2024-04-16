@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS2StygimolochWarrior;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS2StygimolochWarrior;
 
 class FocusedTremorLarge(BossModule module) : Components.SelfTargetedAOEs(module, ActionID.MakeSpell(AID.FocusedTremorAOELarge), new AOEShapeRect(10, 10, 10), 2);
 class ForcefulStrike(BossModule module) : Components.SelfTargetedAOEs(module, ActionID.MakeSpell(AID.ForcefulStrike), new AOEShapeRect(44, 24));

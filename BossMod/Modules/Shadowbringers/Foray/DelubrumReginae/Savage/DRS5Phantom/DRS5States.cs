@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS5Phantom;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS5Phantom;
 
 class DRS5States : StateMachineBuilder
 {

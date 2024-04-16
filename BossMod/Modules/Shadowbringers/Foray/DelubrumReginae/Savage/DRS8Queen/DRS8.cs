@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS8Queen;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS8Queen;
 
 class NorthswainsGlow(BossModule module) : Components.SelfTargetedAOEs(module, ActionID.MakeSpell(AID.NorthswainsGlowAOE), new AOEShapeCircle(20));
 class CleansingSlashSecond(BossModule module) : Components.CastCounter(module, ActionID.MakeSpell(AID.CleansingSlashSecond));

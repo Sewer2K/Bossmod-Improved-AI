@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRN1TrinitySeeker;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Normal.DRN1TrinitySeeker;
 
 class MercifulMoon(BossModule module) : Components.GenericGaze(module, ActionID.MakeSpell(AID.MercifulMoon))
 {

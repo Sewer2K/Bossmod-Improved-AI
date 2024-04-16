@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS2StygimolochWarrior;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS2StygimolochWarrior;
 
 class EntrapmentAttract(BossModule module) : Components.Knockback(module, ActionID.MakeSpell(AID.EntrapmentAttract), true)
 {

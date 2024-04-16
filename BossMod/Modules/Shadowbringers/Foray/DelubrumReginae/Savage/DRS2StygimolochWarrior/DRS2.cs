@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS2StygimolochWarrior;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS2StygimolochWarrior;
 
 class ViciousSwipe(BossModule module) : Components.SelfTargetedAOEs(module, ActionID.MakeSpell(AID.ViciousSwipe), new AOEShapeCircle(15));
 class CrazedRampage(BossModule module) : Components.KnockbackFromCastTarget(module, ActionID.MakeSpell(AID.CrazedRampage), 13);

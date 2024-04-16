@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS4QueensGuard;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS4QueensGuard;
 
 class DRS4States : StateMachineBuilder
 {

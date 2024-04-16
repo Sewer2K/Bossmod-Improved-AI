@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS7StygimolochLord;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS7StygimolochLord;
 
 // TODO: generalize to 'baited puddles' component
 class RapidBoltsBait(BossModule module) : Components.UniformStackSpread(module, 0, 5, alwaysShowSpreads: true)

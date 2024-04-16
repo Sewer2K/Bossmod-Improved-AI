@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS8Queen;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS8Queen;
 
 // TODO: show reflect hints, show stay under dome hints
 class MaelstromsBolt(BossModule module) : Components.CastCounter(module, ActionID.MakeSpell(AID.MaelstromsBoltAOE))

@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS7StygimolochLord;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS7StygimolochLord;
 
 class ViciousSwipe(BossModule module) : Components.Knockback(module, ActionID.MakeSpell(AID.ViciousSwipe))
 {

@@ -1,4 +1,4 @@
-﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.DRS3Dahu;
+﻿namespace BossMod.Shadowbringers.Foray.DelubrumReginae.Savage.DRS3Dahu;
 
 class Shockwave(BossModule module) : Components.GenericAOEs(module)
 {
