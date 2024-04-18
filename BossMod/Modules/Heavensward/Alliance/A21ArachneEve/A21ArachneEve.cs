@@ -1,6 +1,6 @@
 ﻿namespace BossMod.Heavensward.Alliance.A21ArachneEve;
 
-[ModuleInfo(BossModuleInfo.Maturity.Contributed, Contributors = "LTS", GroupType = BossModuleInfo.GroupType.CFC, GroupID = 168, NameID = 4871)]
+[ModuleInfo(BossModuleInfo.Maturity.WIP, Contributors = "CombatReborn Team", GroupType = BossModuleInfo.GroupType.CFC, GroupID = 168, NameID = 4871)]
 public class A21ArachneEve(WorldState ws, Actor primary) : BossModule(ws, primary, new ArenaBoundsCircle(new(20, -60), 30))
 {
     protected override void DrawEnemies(int pcSlot, Actor pc)

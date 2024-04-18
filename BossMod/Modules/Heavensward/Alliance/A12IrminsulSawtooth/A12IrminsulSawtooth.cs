@@ -1,6 +1,6 @@
 ﻿namespace BossMod.Heavensward.Alliance.A12IrminsulSawtooth;
 
-[ModuleInfo(BossModuleInfo.Maturity.Contributed, Contributors = "LTS", PrimaryActorOID = (uint)OID.Irminsul, GroupType = BossModuleInfo.GroupType.CFC, GroupID = 120, NameID = 4623)]
+[ModuleInfo(BossModuleInfo.Maturity.WIP, Contributors = "CombatReborn Team", PrimaryActorOID = (uint)OID.Irminsul, GroupType = BossModuleInfo.GroupType.CFC, GroupID = 120, NameID = 4623)]
 public class A12IrminsulSawtooth(WorldState ws, Actor primary) : BossModule(ws, primary, new ArenaBoundsCircle(new(0, 130), 35))
 {
     private Actor? _sawtooth;
