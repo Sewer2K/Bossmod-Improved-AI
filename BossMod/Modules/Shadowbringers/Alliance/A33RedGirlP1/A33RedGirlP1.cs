@@ -1,0 +1,4 @@
+﻿namespace BossMod.Shadowbringers.Alliance.A33RedGirlP1;
+
+[ModuleInfo(BossModuleInfo.Maturity.Contributed, Contributors = "CombatReborn Team", GroupType = BossModuleInfo.GroupType.CFC, GroupID = 779, NameID = 9920)]
+public class A33RedGirlP1(WorldState ws, Actor primary) : BossModule(ws, primary, new ArenaBoundsCircle(new(845, -850), 30));
