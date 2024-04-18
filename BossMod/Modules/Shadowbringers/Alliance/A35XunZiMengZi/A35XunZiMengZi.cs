@@ -1,6 +1,6 @@
 ﻿namespace BossMod.Shadowbringers.Alliance.A35XunZiMengZi;
 
-[ModuleInfo(BossModuleInfo.Maturity.Contributed, Contributors = "CombatReborn Team", PrimaryActorOID = (uint)OID.XunZi, GroupType = BossModuleInfo.GroupType.CFC, GroupID = 779, NameID = 9921)] //9922 for other boss
+[ModuleInfo(BossModuleInfo.Maturity.WIP, Contributors = "CombatReborn Team", PrimaryActorOID = (uint)OID.XunZi, GroupType = BossModuleInfo.GroupType.CFC, GroupID = 779, NameID = 9921)] //9922 for other boss
 public class A35XunZiMengZi(WorldState ws, Actor primary) : BossModule(ws, primary, new ArenaBoundsSquare(new(800, 800), 20))
 {
     private Actor? _mengZi;

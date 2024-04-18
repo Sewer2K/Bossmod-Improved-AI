@@ -1,7 +1,7 @@
 ﻿namespace BossMod.Shadowbringers.Alliance.A22FlightUnits;
 
 
-[ModuleInfo(BossModuleInfo.Maturity.Contributed, Contributors = "CombatReborn Team", PrimaryActorOID = (uint)OID.FlightUnitALpha, GroupType = BossModuleInfo.GroupType.CFC, GroupID = 736, NameID = 9364)]  //9617 for B-eta, 9618 for C-hi
+[ModuleInfo(BossModuleInfo.Maturity.WIP, Contributors = "CombatReborn Team", PrimaryActorOID = (uint)OID.FlightUnitALpha, GroupType = BossModuleInfo.GroupType.CFC, GroupID = 736, NameID = 9364)]  //9617 for B-eta, 9618 for C-hi
 public class A22FlightUnits(WorldState ws, Actor primary) : BossModule(ws, primary, new ArenaBoundsCircle(new(-230, -180), 30))
 {
     private Actor? _beta;

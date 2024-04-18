@@ -25,7 +25,7 @@ public enum AID : uint
     Wail1 = 23671, // Hansel->self, 5.0s cast, range 50 circle
     CripplingBlow1 = 23672, // Boss->player, 5.0s cast, single-target
     WhirlingAssault = 23792, // Ally2B->self, 2.0s cast, range 40 width 4 rect
-    Wai2l = 23670, // Boss->self, 5.0s cast, range 50 circle
+    Wail2 = 23670, // Boss->self, 5.0s cast, range 50 circle
     CripplingBlow2 = 23673, // Hansel->player, 5.0s cast, single-target
     TandemAssaultBloodySweep1 = 25016, // Boss->self, 5.0s cast, single-target
     TandemAssaultBloodySweep2 = 25017, // Hansel->self, 5.0s cast, single-target
